@@ -7,7 +7,7 @@
 <div class="content">
     <h2>{{ object.title }}</h2>
     {% if object.description %}
-    <div>{% autoescape off %}{{ object.description }}{% endautoescape %}</div>
+    {% autoescape off %}{{ object.description }}{% endautoescape %}
     {% endif %}
     {% if link %}<a href="{{ link }}">{% trans "more" %} &#187;</a>{% endif %}
 </div>
