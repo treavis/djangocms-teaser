@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from djangocms_text_ckeditor.fields import HTMLField
 
 from cms.models import CMSPlugin, Page
 try:
@@ -32,7 +33,7 @@ class Teaser(CMSPlugin):
         _("link"), max_length=255, blank=True, null=True,
         help_text=_("If present image will be clickable."))
 
-    description = models.TextField(_("description"), blank=True, null=True)
+    description = HTMLField(_("description"), blank=True, default="")
     
     def __str__(self):
         return self.title
